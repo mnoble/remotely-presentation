@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Chau+Philomene+One);
+
+#preso, .slide {
+  background: #2b8758 url("images/bg.png") no-repeat;
+  font-family: "Chau Philomene One";
+  color: #FFF;
+  text-shadow: 0 2px 0 #2a744f;
+}
+
+.content {
+  padding: 0 50px;
+  margin: 0;
+}
+
+#name {
+  font-size: 30px;
+  color: #57bd83;
+  margin: 0;
+  text-align: left;
+}
+
+h1 {
+  font-size: 92px;
+  margin: 0;
+  text-align: left;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+.content > pre, pre, pre.sh_ruby, pre.sh_javascript {
+  background: #111111;
+  text-shadow: none;
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 2em;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  font-size: 28px;
+  font-family: Monaco;
+}
+
+td {
+  padding: 10px 0;
+}
+
+small {
+  font-size: .6em;
+}
+
+ul.contact {
+  width: 500px;
+  margin: 100px auto 0 auto;
+  list-style: none;
+}
+
+ul.contact li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.contact img {
+  display: block;
+  float: left;
+  margin: -5px 20px 0 0;
+}
+
+ul.contact .email img {
+  margin: 10px 30px 0 10px;
+}
+
+ul.contact .github img {
+  margin-right: 32px;
+}
+
+pre.highlighted { color: #DDDDDD; line-height: 1.2em; }
+pre.highlighted .keyword { color: #B294BB; }
+pre.highlighted .class   { color: #F0C66F; }
+pre.highlighted .symbol  { color: #B5BD68; }
+pre.highlighted .string  { color: #B5BD68; }
+pre.highlighted .number  { color: #DE935B; }
+pre.highlighted .comment { color: #969696; }
+
+
