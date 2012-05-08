@@ -1,6 +1,8 @@
 !SLIDE 
 
 <p id="name">Matte Noble</p>
+<p id="wego">wegowise</p>
+<p style="clear:both"></p>
 # REMOTELY #
 
 !SLIDE

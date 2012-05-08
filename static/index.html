@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Remotely</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/style.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
+
+
+<p id="name">Matte Noble</p>
+
+
+<p id="wego">wegowise</p>
+
+
+<p style="clear:both"/>
+
+
+<h1>REMOTELY</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/2">
+<h2>API backed models and associations</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/3">
+<h3>Configuration</h3>
+
+<pre class="highlighted">
+<span class="class">Remotely</span>.configure do
+  app <span class="symbol">:bostonrb</span> do
+    url "<span class="string">http://bostonrb.org/api</span>"
+  end
+end
+</pre>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/4">
+<h3>Models</h3>
+
+<pre class="highlighted">
+<span class="keyword">class</span> <span class="class">Presentation</span> &lt; <span class="class">Remotely</span>::<span class="class">Model</span>
+  app <span class="symbol">:bostonrb</span>
+  uri "<span class="string">/presentations</span>"
+<span class="keyword">end</span>
+</pre>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/5">
+<h2>Just like ActiveRecord::Base</h2>
+
+<p class="subtitle">(mostly)</p>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/01_slide/6">
+<h3>Endpoints</h3>
+
+<table>
+  <tr>
+    <td>Presentation.all</td>
+    <td>GET /presentations</td>
+  </tr>
+  <tr>
+    <td>Presentation.find</td>
+    <td>GET /presentations/:id</td>
+  </tr>
+  <tr>
+    <td>Presentation.where</td>
+    <td>GET /presentations/search</td>
+  </tr>
+  <tr>
+    <td>Presentation.create</td>
+    <td>POST /presentations</td>
+  </tr>
+  <tr>
+    <td>Presentation.destroy</td>
+    <td>DELETE /presentations/:id</td>
+  </tr>
+  <tr>
+    <td/>
+    <td/>
+  </tr>
+  <tr>
+    <td>presentation.save <small>(new)</small></td>
+    <td>POST /presentations</td>
+  </tr>
+  <tr>
+    <td>presentation.save <small>(retrieved)</small></td>
+    <td>PUT /presentations/:id</td>
+  </tr>
+  <tr>
+    <td>presentation.destroy</td>
+    <td>DELETE /presentations/:id</td>
+  </tr>
+</table>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/7">
+<h3>Associations</h3>
+
+<pre class="highlighted">
+<span class="keyword">class</span> <span class="class">Presentation</span> &lt; <span class="class">Remotely</span>::<span class="class">Model</span>
+  belongs_to_remote <span class="symbol">:speaker</span>
+  has_many_remote   <span class="symbol">:listeners</span>
+  has_one_remote    <span class="symbol">:slidedeck</span>
+<span class="keyword">end</span>
+</pre>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/8">
+<h2>Associations work on ActiveRecord::Base models as well.</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/9">
+<h3>Response:</h3>
+
+<pre class="highlighted">
+{
+  "<span class="string">id</span>": <span class="number">1</span>,
+  "<span class="string">name</span>": "<span class="string">Remotely</span>",
+  "<span class="string">description</span>": "<span class="string">TBD</span>",
+  "<span class="string">speaker_id</span>": <span class="number">2</span>
+}
+</pre>
+
+
+<h3>Becomes</h3>
+
+<pre class="highlighted">
+#&lt;<span class="class">Presentation</span> id=<span class="number">1</span> name="<span class="string">Remotely</span>" description="<span class="string">TBD</span>"&gt;
+</pre>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+<h2>All Together Now</h2>
+
+<pre class="highlighted">
+<span class="keyword">class</span> <span class="class">Presentation</span> &lt; <span class="class">Remotely</span>::<span class="class">Model</span>
+  app <span class="symbol">:bostonrb</span>
+  uri "<span class="string">/presentations</span>"
+<span class="keyword">end</span>
+
+presentation = <span class="class">Presentation</span>.find(<span class="number">1</span>)
+<span class="comment"># =&gt; GET /presentations/1</span>
+
+presentation.save
+<span class="comment"># =&gt; PUT /presentations/1</span>
+
+presentation.speaker_id
+<span class="comment"># =&gt; 2</span>
+
+presentation.speaker
+<span class="comment"># =&gt; Speaker.find(2)</span>
+</pre>
+
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/11">
+<h3>Thanks</h3>
+
+<ul class="contact">
+  <li class="email"><img src="./file/one/email.png" width="50" height="36"/>me@mattenoble.com</li>
+  <li><img src="./file/one/thetweeter.png" width="71" height="59"/>@mattenoble</li>
+  <li class="github"><img src="./file/one/nyan.png" width="60" height="60"/>mnoble</li>
+</ul>
+
+</div>
+</div></div>
+
+</body>
+</html>
